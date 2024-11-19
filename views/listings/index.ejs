@@ -1,0 +1,59 @@
+<% layout("/layouts/boilerplate") -%>
+
+<!-- <h3 class="my-3">All Listings</h3> -->
+<!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+</form> -->
+
+<div id="filters" class="my-3">
+    <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-solid fa-mountain-sun"></i></div>
+        <p>Mountain</p>
+    </div>
+    <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+    </div>
+    <div class="filter">
+        <div class="icn"><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-3 row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mb-3">
+    <% for (let listing of allListings) { %>
+        <a href="/listings/<%= listing._id %>">
+            <div class="card listing-card col">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listings-image">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b>
+                            <br>
+                            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+                    </p>
+                </div>
+            </div>
+        </a>
+        <% } %>
+</div>
