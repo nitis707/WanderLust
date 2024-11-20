@@ -1,3 +1,3 @@
 # WanderLust
 
-Link - https://wanderlust-xi3c.onrender.com
+Website Link - https://wanderlust-xi3c.onrender.com
